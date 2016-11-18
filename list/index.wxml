@@ -1,12 +1,16 @@
 <form bindsubmit="formSubmit" bindreset="formReset">
-
     <view class="section">
-        <input placeholder="请输入" id="input" value="{{inputVal}}" name="input"/>
+      <text>
+      请输入：
+      </text>
+    </view>
+    <view class="section">
+        <input id="input" value="{{inputVal}}" name="input"/>
     </view>
 
   <view class="btn-area">
-    <button formType="submit" class="btn">保存</button>
-    <button formType="reset" class="reset">重置</button>
+    <button formType="submit" type="primary" class="btn">保存</button>
+    <button formType="reset" type="warn" class="reset">重置</button>
   </view>
 </form>
 

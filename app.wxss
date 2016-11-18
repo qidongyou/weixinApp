@@ -51,6 +51,5 @@ input{
   background-color: #ddd;
 }
 form{
-  margin-top: 15px;
   background-color: #ddd;
 }

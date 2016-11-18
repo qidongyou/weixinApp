@@ -1,5 +1,5 @@
 <!--logs.wxml-->
-<form bindsubmit="formSubmit" bindreset="formReset">
+<!--<form bindsubmit="formSubmit" bindreset="formReset">
 
     <view class="section">
         <input placeholder="请输入" id="input" value="{{inputVal}}" name="input"/>
@@ -9,7 +9,7 @@
     <button formType="submit" type="primary" class="btn">保存</button>
     <button formType="reset" type="warn" class="reset">重置</button>
   </view>
-</form>
+</form>-->
 
 <!--<view class="section">
         <input placeholder="请输入" 
