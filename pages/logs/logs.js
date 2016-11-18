@@ -3,53 +3,84 @@ var util = require('../../utils/util.js')
 Page({
   data: {
     logs: [],
+    images: [],
     inputVal: 'aaaaa'
   },
+  upload: function(){
 
-  bindKeyInput:function(e){
-    
-    console.log(e.detail.value);
+    var parentThis = this;
 
-    if(!e.detail.value){
-      
-      this.setData({
-        inputVal: 'adasdad'
-      })
-
-    }else{
-      this.setData({
-        inputVal: ''
-      })
-    }
-    
-
-    
-  },
-  formSubmit: function(e) {
-      
-      console.log(e.detail.value.input);
-      var input = e.detail.value.input;
-      if(!input){
-        this.setData({
-          inputVal: '55555'
-        })
-      }else{
-        this.setData({
-          inputVal: ''
+    wx.chooseImage({
+      count: 3, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        var tempFilePaths = res.tempFilePaths
+        console.log(tempFilePaths);
+        parentThis.setData({
+          images: tempFilePaths
         })
       }
-      
-      this.onLoad();
-      this.formReset();
+    })
+  },
+  // previewImage: function(){
+  //   wx.previewImage({
+  //     current: 'https://resource.36dong.com/banner/20160825/c2fd9f089bf1846f22c133829833d12e.jpg', // 当前显示图片的http链接
+  //     urls: ['https://resource.36dong.com/banner/20160825/c2fd9f089bf1846f22c133829833d12e.jpg',
+  //            'https://resource.36dong.com/theme/20150702/22f470b231e636b109ac5f80b0c5291e.jpg',
+  //            'https://resource.36dong.com/theme/20150702/1acda0745afa27fd29a0a07472cb1b23.jpg?aaadsdfsdfs'
+  //     ] // 需要预览的图片http链接列表
+  //   })
+  // },
+  getImageInfos: function(){
 
+    // wx.showModal({
+    //     title: '提示',
+    //     content: 'aaasdasdasdas',
+    //     success: function(res) {
+    //       if (res.confirm) {
+    //         console.log('用户点击确定')
+    //       }
+    //     }
+    //   })
 
-    },
-    formReset: function() {
-        this.setData({
-          inputVal: ''
-        })
-    },
+    
+      wx.getImageInfo({
+        src: 'https://resource.36dong.com/banner/20160825/c2fd9f089bf1846f22c133829833d12e.jpg',
+        success: function (res) {
+          console.log(res)
+          console.log(res.width)
+          console.log(res.height)
+          // var msg = '宽度为：' + res.width + ',高度为为: ' + res.height
+          wx.showModal({
+            title: '提示',
+            content: 'aadadasdasdadadasda',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }
+            }
+          })
+        }
+      })
+  },
   onLoad: function () {
+
+    // https请求 
+    wx.request({
+        url: 'https://www.badazhou.com/t/wxRes', //仅为示例，并非真实的接口地址
+        success: function(res) {
+          console.log(res.data)
+        },
+        fail: function(res){
+          console.log(res)
+        }
+
+      })
+
+    
+
     this.setData({
       logs: (wx.getStorageSync('logs') || []).map(function (log) {
         return util.formatTime(new Date(log))

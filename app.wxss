@@ -48,6 +48,13 @@ input{
   padding: 8px 5px;
   background-color: #ddd;
 }
+
 form{
   background-color: #ddd;
+}
+
+.log-list image,image{
+
+  width: 100px;
+  height: 100px;
 }

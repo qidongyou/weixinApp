@@ -43,3 +43,18 @@ try {
 
 ## 使用了一些ES语法
 
+## 微信wx.request
+
+在测试wx.request的时候.
+
+* wx.request  post传参数，开发者服务器取不到参数
+
+```php
+// 在php内嵌入此句也不适合。
+header('Access-Control-Allow-Origin:*');
+// 可能要在nginx 服务器上配置一些参数，可以让微信小程序调用
+```
+* 基本上get是没有问题的。（url各种带参数是没有问题的）
+* 其他的API没有测试,用的不多,如果有需要再进行测试。
+
+
