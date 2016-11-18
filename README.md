@@ -86,6 +86,8 @@ for(var i = 0; i< 5;i++){
 
 ## 其他相关文章
 
+* [官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/?t=20161107)
+* [测试工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html?t=20161107)
 * [segmentfault相关文档](https://segmentfault.com/a/1190000007003240)
 
 
