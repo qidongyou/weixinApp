@@ -10,10 +10,34 @@
 
 
 ## 添加数据
+使用**wx.setStorageSync(KEY,DATA)**.
+```javascript
+try {
+    wx.setStorageSync('key', 'value')
+} catch (e) {
+}
+
+```
 
 ## 删除数据
+使用 **wx.removeStorageSync(KEY)**
+```javascript
+try {
+  wx.removeStorageSync('key')
+} catch (e) {
+  // Do something when catch error
+}
+
+```
+
 
 ## 详情页面
+此时用到路由机制
+```html
+<navigator url="../test/logs" >
+	查看
+</navigator>
+```
 
 ## 模块化的测试
 
