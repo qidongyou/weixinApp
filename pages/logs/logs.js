@@ -67,17 +67,41 @@ Page({
   },
   onLoad: function () {
 
-    // https请求 
-    wx.request({
-        url: 'https://www.badazhou.com/t/wxRes', //仅为示例，并非真实的接口地址
+    var count = 0
+    var maxRequest = 100
+
+
+    var getRequest = function(){
+      
+      
+
+      wx.request({
+        url: 'https://36dong.com/t/wxRes', //仅为示例，并非真实的接口地址
         success: function(res) {
-          console.log(res.data)
+          count++
+          console.log(count)
+          if(count < maxRequest){
+            getRequest()
+          }
+          
         },
         fail: function(res){
           console.log(res)
         }
 
       })
+
+    }
+
+    // https请求 
+    for(var i = 0; i< 6;i++){
+
+      getRequest();
+
+      
+
+    }
+    
 
     
 

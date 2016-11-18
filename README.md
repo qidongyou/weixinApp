@@ -45,6 +45,8 @@ try {
 
 ## 微信wx.request
 
+>wx.request发起的是https请求。**一个微信小程序，同时只能有5个网络请求连接。**
+
 在测试wx.request的时候.
 
 * wx.request  post传参数，开发者服务器取不到参数
@@ -56,5 +58,38 @@ header('Access-Control-Allow-Origin:*');
 ```
 * 基本上get是没有问题的。（url各种带参数是没有问题的）
 * 其他的API没有测试,用的不多,如果有需要再进行测试。
+```javascript
+var count = 0
+var maxRequest = 100
+var getRequest = function(){
+
+	wx.request({
+		// 此域名必需要配置
+		url: 'https://test.com/t/wxRes', //仅为示例，并非真实的接口地址
+		success: function(res) {
+			count++
+			if(count < maxRequest){
+				getRequest()
+			} 
+		},
+		fail: function(res){
+			console.log(res)
+		}
+	})
+}
+// https请求 
+for(var i = 0; i< 5;i++){
+	getRequest()
+}
+// 如果直接for10次的话，肯定有错误。这里只能for5次
+```
+
+## 其他相关文章
+
+* [segmentfault相关文档](https://segmentfault.com/a/1190000007003240)
+
+
+
+
 
 
