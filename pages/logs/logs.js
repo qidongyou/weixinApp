@@ -72,19 +72,31 @@ Page({
 
 
     var getRequest = function(){
-      
-      
 
+      var postData = {
+        id: 1234444,
+        name: 'adasdadad'
+      };
+      postData = util.json2Form(postData);
+      
+      
+      // post数据成功
       wx.request({
         url: 'https://36dong.com/t/wxRes', //仅为示例，并非真实的接口地址
+        header: {  
+          "Content-Type": "application/x-www-form-urlencoded"  
+        },
+        method: "POST",
+        data:postData,
         success: function(res) {
           count++
           console.log(count)
           if(count < maxRequest){
-            getRequest()
+            // getRequest()
           }
           
         },
+        
         fail: function(res){
           console.log(res)
         }
@@ -94,7 +106,7 @@ Page({
     }
 
     // https请求 
-    for(var i = 0; i< 6;i++){
+    for(var i = 0; i< 1;i++){
 
       getRequest();
 

@@ -83,12 +83,52 @@ for(var i = 0; i< 5;i++){
 }
 // 如果直接for10次的话，肯定有错误。这里只能for5次
 ```
+我在测试的时候发现一个问题。post数据的时候一直不成功。经过查看文档得出结论。
+需要加一段代码
+
+
+
+```javascript
+
+// log.js
+
+// 头部
+	header: {  
+     "Content-Type": "application/x-www-form-urlencoded"  
+	},  
+// 这样的数据是取不到值的。要把参数转化为这个形式才ok, **id=1234444&name=adasdadad**
+
+var postData = {
+	id: 1234444,
+	name: 'qidongyou'
+};
+postData = util.json2Form(postData);
+
+// util.js
+function json2Form(json) {  
+    var str = [];  
+    for(var p in json){  
+        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p]));  
+    }  
+    return str.join("&");  
+}
+
+module.exports = {
+  json2Form: json2Form
+}
+
+```
+
+
+
+
 
 ## 其他相关文章
 
 * [官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/?t=20161107)
 * [测试工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html?t=20161107)
 * [segmentfault相关文档](https://segmentfault.com/a/1190000007003240)
+* [post参考文档](http://blog.csdn.net/qq_31383345/article/details/52839482)
 
 
 
