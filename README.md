@@ -120,11 +120,7 @@ module.exports = {
 ```
 ## 测试结果
 
-**wx.getImageInfo**取远程图片是有问题的。*https://36dong.com/assets/images/index/box.png*，在本地测试是没有问题。
-
-
-
-
+**wx.getImageInfo**取远程图片元信息是有问题的。*https://36dong.com/assets/images/index/box.png*，在本地测试是没有问题。
 
 
 ## 其他相关文章
@@ -133,6 +129,7 @@ module.exports = {
 * [测试工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html?t=20161107)
 * [segmentfault相关文档](https://segmentfault.com/a/1190000007003240)
 * [post参考文档](http://blog.csdn.net/qq_31383345/article/details/52839482)
+* [查找问题相关网站](https://segmentfault.com/u/dongyou)
 
 
 
