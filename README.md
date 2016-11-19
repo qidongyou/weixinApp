@@ -34,7 +34,7 @@ try {
 ## 详情页面
 此时用到路由机制
 ```html
-<navigator url="../test/logs" >
+<navigator url="/test/logs" >
 	查看
 </navigator>
 ```
@@ -118,6 +118,10 @@ module.exports = {
 }
 
 ```
+## 测试结果
+
+**wx.getImageInfo**取远程图片是有问题的。*https://36dong.com/assets/images/index/box.png*，在本地测试是没有问题。
+
 
 
 

@@ -11,13 +11,57 @@ Page({
     var parentThis = this;
 
     wx.chooseImage({
-      count: 3, // 默认9
+      count: 1, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
         console.log(tempFilePaths);
+
+        wx.getImageInfo({
+
+        src: 'https://36dong.com/assets/images/index/box.png',
+        success: function (res) {
+          console.log(res)
+          console.log(res.width)
+          console.log(res.height)
+          // var msg = '宽度为：' + res.width + ',高度为为: ' + res.height
+          wx.showModal({
+            title: '提示',
+            content: 'aadadasdasdadadasda',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }
+            }
+          })
+        },
+        fail: function(){
+          wx.showModal({
+            title: '提示',
+            content: '失败',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }
+            }
+          })
+        }
+        // complete: function(){
+        //   wx.showModal({
+        //     title: '提示',
+        //     content: 'complete',
+        //     success: function(res) {
+        //       if (res.confirm) {
+        //         console.log('用户点击确定')
+        //       }
+        //     }
+        //   })
+        // }
+      })
+
+
         parentThis.setData({
           images: tempFilePaths
         })
@@ -33,7 +77,7 @@ Page({
   //     ] // 需要预览的图片http链接列表
   //   })
   // },
-  getImageInfos: function(){
+  tapName: function(){
 
     // wx.showModal({
     //     title: '提示',
@@ -45,27 +89,34 @@ Page({
     //     }
     //   })
 
+    //   return false;
     
       wx.getImageInfo({
+
         src: 'https://resource.36dong.com/banner/20160825/c2fd9f089bf1846f22c133829833d12e.jpg',
+        
         success: function (res) {
           console.log(res)
           console.log(res.width)
           console.log(res.height)
           // var msg = '宽度为：' + res.width + ',高度为为: ' + res.height
-          wx.showModal({
-            title: '提示',
-            content: 'aadadasdasdadadasda',
-            success: function(res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              }
-            }
-          })
+          // wx.showModal({
+          //   title: '提示',
+          //   content: 'aadadasdasdadadasda',
+          //   success: function(res) {
+          //     if (res.confirm) {
+          //       console.log('用户点击确定')
+          //     }
+          //   }
+          // })
         }
       })
   },
   onLoad: function () {
+
+    wx.setNavigationBarTitle({
+      title: '当前页面'
+    })
 
     var count = 0
     var maxRequest = 100
@@ -109,10 +160,16 @@ Page({
     for(var i = 0; i< 1;i++){
 
       getRequest();
-
-      
-
     }
+
+    // wx.showActionSheet({
+    //     itemList: ['A', 'B', 'C'],
+    //     success: function(res) {
+    //       if (!res.cancel) {
+    //         console.log(res.tapIndex)
+    //       }
+    //     }
+    //   })
     
 
     

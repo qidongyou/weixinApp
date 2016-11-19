@@ -28,7 +28,7 @@
     <text>上传图片</text>
 </view>-->
 
-<view  bindtap="getImageInfos">
+<view  bindtap="upload">
   <image src="https://36dong.com/api/thumbImg/293x347?img=http://resource.36dong.com/banner/20160825/c2fd9f089bf1846f22c133829833d12e.jpg" 
     background-size="cover"></image>
 
