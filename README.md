@@ -132,7 +132,8 @@ module.exports = {
 * [查找问题相关网站](https://segmentfault.com/u/dongyou)
 
 ## 我的公众号
-![](http://7xkol0.com1.z0.glb.clouddn.com/qrcode)
+
+![](http://7xkol0.com1.z0.glb.clouddn.com/qrcode_258)
 
 
 
