@@ -131,7 +131,8 @@ module.exports = {
 * [post参考文档](http://blog.csdn.net/qq_31383345/article/details/52839482)
 * [查找问题相关网站](https://segmentfault.com/u/dongyou)
 
-
+## 我的公众号
+![](http://7xkol0.com1.z0.glb.clouddn.com/qrcode)
 
 
 
