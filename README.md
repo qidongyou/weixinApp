@@ -134,6 +134,16 @@ module.exports = {
 > **download Image fail**
 
 
+## 坑点
+* 本地没资源不无法通过css获取。可以使用网络图片，或者base64
+* app.json文件下的pages配置不能重复
+* 宽高设置百分比无效果
+* this与that：this.setData报错
+* post 请求数据
+* 修改域名配置的时候有bug. 重启项目
+* 
+
+
 ## 其他相关文章
 
 * [官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/?t=20161107)
