@@ -40,8 +40,15 @@ try {
 ```
 
 ## 模块化的测试
+utils下的文件都是使用模块化的测试代码。
 
 ## 使用了一些ES语法
+
+请查看**/utils/test.js**,实现了类似汉字转拼音的效果。
+```javascript
+var res = test.getFullChars('中国');
+```
+
 
 ## 微信wx.request
 
