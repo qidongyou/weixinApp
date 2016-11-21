@@ -122,6 +122,10 @@ module.exports = {
 
 **wx.getImageInfo**取远程图片元信息是有问题的。*https://36dong.com/assets/images/index/box.png*，在本地测试是没有问题。
 
+![](http://7xkol0.com1.z0.glb.clouddn.com/wx-getImageInfo-error)
+
+> **download Image fail**
+
 
 ## 其他相关文章
 

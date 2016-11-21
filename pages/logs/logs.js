@@ -37,10 +37,12 @@ Page({
             }
           })
         },
-        fail: function(){
+        fail: function(e){
+          var result = util.json2Form(e);
+
           wx.showModal({
             title: '提示',
-            content: '失败',
+            content: result,
             success: function(res) {
               if (res.confirm) {
                 console.log('用户点击确定')
