@@ -65,6 +65,8 @@ header('Access-Control-Allow-Origin:*');
 ```
 * 基本上get是没有问题的。（url各种带参数是没有问题的）
 * 其他的API没有测试,用的不多,如果有需要再进行测试。
+
+xxxxxxxdxx
 ```javascript
 var count = 0
 var maxRequest = 100
