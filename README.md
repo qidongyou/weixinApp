@@ -50,7 +50,7 @@ var res = test.getFullChars('中国');
 ```
 
 
-## 微信wx.request
+## 微信wx.request 测试
 
 >wx.request发起的是https请求。**一个微信小程序，同时只能有5个网络请求连接。**
 
